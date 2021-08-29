@@ -61,7 +61,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColorLight,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColorDark,
         centerTitle: true,
         title: Text('Ask Me Anything!'),
         actions: [
