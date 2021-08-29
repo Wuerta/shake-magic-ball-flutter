@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Ask Me Anything!'),
         actions: [
           const CustomIconButton(
-            tooltip: 'Shake your phone or tap on triangle!',
+            tooltip: 'Shake your phone or tap on magic ball!',
             icon: Icon(Icons.info_outline),
           ),
         ],
