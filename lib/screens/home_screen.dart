@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shake_ball_magic/components/custom_iconbutton.dart';
+import 'package:shake_ball_magic/components/magic_ball.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -73,6 +74,13 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.info_outline),
           ),
         ],
+      ),
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(24),
+          constraints: const BoxConstraints(maxWidth: 480),
+          child: const MagicBall(),
+        ),
       ),
     );
   }
