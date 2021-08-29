@@ -31,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ListBody(
               children: const <Widget>[
                 Text('We are not responsible for the misuse of the features offered by this app.'),
+                SizedBox(height: 16),
                 Text('Use the shake function with caution.'),
               ],
             ),
