@@ -10,6 +10,8 @@ class MagicBall extends StatefulWidget {
 class _MagicBallState extends State<MagicBall> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return GestureDetector(
+      child: Image.asset('assets/ball1.png'),
+    );
   }
 }
