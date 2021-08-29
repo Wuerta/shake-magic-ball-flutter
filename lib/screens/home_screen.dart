@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shake_ball_magic/components/custom_iconbutton.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,7 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
           content: SingleChildScrollView(
             child: ListBody(
               children: const <Widget>[
-                Text('We are not responsible for the misuse of the features offered by this app.'),
+                Text(
+                    'We are not responsible for the misuse of the features offered by this app.'),
                 SizedBox(height: 16),
                 Text('Use the shake function with caution.'),
               ],
@@ -58,6 +60,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Ask Me Anything!'),
+        actions: [
+          const CustomIconButton(
+            tooltip: 'Shake your phone or tap on triangle!',
+            icon: Icon(Icons.info_outline),
+          ),
+        ],
+      ),
+    );
   }
 }
