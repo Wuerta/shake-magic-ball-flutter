@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shake/shake.dart';
 
 class MagicBall extends StatefulWidget {
   const MagicBall({Key? key}) : super(key: key);
@@ -11,13 +12,28 @@ class MagicBall extends StatefulWidget {
 }
 
 class _MagicBallState extends State<MagicBall> {
+  late ShakeDetector detector;
   int ballNumber = 1;
 
   _randomBall() {
-    HapticFeedback.lightImpact();
+    HapticFeedback.vibrate();
     setState(() {
       ballNumber = Random().nextInt(5) + 1;
     });
+  }
+
+  @override
+  void initState() {
+    setState(() {
+      detector = ShakeDetector.autoStart(onPhoneShake: _randomBall);
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    detector.stopListening();
+    super.dispose();
   }
 
   @override
